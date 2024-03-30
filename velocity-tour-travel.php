@@ -37,6 +37,27 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'VELOCITY_TOUR_TRAVEL_VERSION', '1.0.0' );
 
+
+/**
+ * Define constants
+ *
+ * @since 1.2.0
+ */
+if (!defined('VELOCITY_TOUR_TRAVEL_DIR'))	define('VELOCITY_TOUR_TRAVEL_DIR', plugin_dir_path(__FILE__)); // Plugin directory absolute path with the trailing slash. Useful for using with includes eg - /var/www/html/wp-content/plugins/velocity-tour-travel/
+if (!defined('VELOCITY_TOUR_TRAVEL_DIR_URI'))	define('VELOCITY_TOUR_TRAVEL_DIR_URI', plugin_dir_url(__FILE__)); // URL to the plugin folder with the trailing slash. Useful for referencing src eg - http://localhost/wp-content/plugins/velocity-tour-travel
+
+
+/// Load everything
+$includes = [
+	'includes/lib/cmb2/init.php', // load cmb2
+	'includes/meta-box.php', // load meta-box 
+	'includes/functions.php', // load functions
+];
+foreach ($includes as $include) {
+	require_once(VELOCITY_TOUR_TRAVEL_DIR.$include);
+}
+
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-velocity-tour-travel-activator.php
