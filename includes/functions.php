@@ -1,13 +1,14 @@
 <?php
 
+// register new post_type and taxonomy
 add_action('init', 'velocity_tour_travel_admin_init');
 function velocity_tour_travel_admin_init() {
     register_post_type('paket-tour', array(
         'labels' => array(
             'name' => 'Paket Tour',
             'singular_name' => 'paket-tour',
-            'add_new' => 'Tambah Paket Tour Baru',
-            'add_new_item' => 'Tambah Paket Tour Baru',
+            'add_new' => 'Tambah Paket Tour',
+            'add_new_item' => 'Tambah Paket Tour',
             'edit_item' => 'Edit Paket Tour',
             'view_item' => 'Lihat Paket Tour',
             'search_items' => 'Cari Paket Tour',
