@@ -57,3 +57,13 @@ foreach ($includes as $include) {
 	require_once(VELOCITY_TOUR_TRAVEL_DIR.$include);
 }
 
+
+// Add custom scripts and styles
+function velocity_tour_scripts() {
+	$wptheme = wp_get_theme( 'velocity' );
+	if (!$wptheme->exists()) {
+		wp_enqueue_style( 'vtt-bootstrap-style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
+		wp_enqueue_script( 'vtt-bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), null, true );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'velocity_tour_scripts' );

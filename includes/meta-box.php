@@ -4,7 +4,7 @@
  * meta box using cmb2
  * @package Velocity Tour Travel
  */
- 
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'cmb2_admin_init', 'velocity_tour_travel_metaboxes' );
 function velocity_tour_travel_metaboxes() {

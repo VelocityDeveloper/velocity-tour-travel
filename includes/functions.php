@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 // register new post_type and taxonomy
 add_action('init', 'velocity_tour_travel_admin_init');
 function velocity_tour_travel_admin_init() {
@@ -44,4 +46,18 @@ function velocity_tour_travel_admin_init() {
         $wp_rewrite->flush_rules();
         update_option('vtt_activated', true);
     }
+}
+
+
+
+add_action('admin_menu', 'velocity_tour_custom_submenu');
+function velocity_tour_custom_submenu() {
+    add_submenu_page('edit.php?post_type=paket-tour', 'Pengaturan', 'Pengaturan', 'manage_options', 'pengaturan-paket', 'velocity_tour_admin');
+}
+
+function velocity_tour_admin(){
+    echo '<div class="wrap">';
+        echo '<h2>Pengaturan</h2>';
+        require_once VELOCITY_TOUR_TRAVEL_DIR . 'includes/admin.php';
+    echo '</div>';
 }
