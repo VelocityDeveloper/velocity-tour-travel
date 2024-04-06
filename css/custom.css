@@ -1,0 +1,10 @@
+.velocity-harga-paket {
+    position: absolute;
+    left: 10px !important;
+    top: 10px !important;
+    z-index: 2;
+    color: #fff;
+    background-color: var(--bs-primary);
+    font-size: 12px !important;
+    padding: 3px 8px;
+}

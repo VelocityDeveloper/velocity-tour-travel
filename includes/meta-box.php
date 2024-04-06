@@ -31,6 +31,23 @@ function velocity_tour_travel_metaboxes() {
 			'required' => 'required',
 		),
 	) );
+	$cmb->add_field( array(
+		'name'       => __( 'Durasi', $text_domain ),
+		'desc'       => __( 'Contoh: 5 Hari', $text_domain ),
+		'id'         => 'durasi',
+		'type'       => 'text',
+	) );
+	$cmb->add_field( array(
+		'name'       => __( 'Waktu Tour', $text_domain ),
+		'desc'       => __( 'Isi tanggal tour, contoh: 24 April - 29 April', $text_domain ),
+		'id'         => 'waktu',
+		'type'       => 'text',
+	) );
+	$cmb->add_field( array(
+		'name'       => __( 'Lokasi Tour', $text_domain ),
+		'id'         => 'lokasi',
+		'type'       => 'text',
+	) );
     $cmb->add_field( array(
         'name' => __( 'Galeri Foto', $text_domain ),
         'desc' => '',

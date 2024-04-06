@@ -1,0 +1,78 @@
+.fl-contact-form textarea, .fl-contact-form input[type="text"], .fl-contact-form input[type="tel"], .fl-contact-form input[type="email"] {
+	display: inline-block;
+	width: 100%;
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+	font-size: 13px;
+	color: #373737;
+	border-radius: 3px;
+}
+.velocity-kategori img {
+	filter: brightness(0) invert(1);
+	max-height: 50px;
+	width: auto;
+}
+.vpost-thumb {
+	background-color: #000000;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	width: 100%;
+	height: 400px;
+}
+footer .fl-module-rich-text ul {
+	padding: 0;
+	margin: 0;
+}
+footer .fl-module-rich-text ul label {
+	padding-left:0;
+	margin-right: 5px;
+}
+footer .fl-module-rich-text ul li {
+	display: block;
+	padding-bottom: 7px;
+	padding-left: 20px;
+	position: relative;
+}
+footer .fl-module-rich-text ul li::before {
+	content: "\f054";
+	font-family: "FontAwesome";
+	position: absolute;
+	top:0px;
+	left:2px;
+}
+.fl-module-fl-post-content h1 {
+    font-size: 28px; /* Ukuran untuk h1 */
+}
+
+.fl-module-fl-post-content h2 {
+    font-size: 24px; /* Ukuran untuk h2 */
+}
+
+.fl-module-fl-post-content h3 {
+    font-size: 20px; /* Ukuran untuk h3 */
+}
+
+.fl-module-fl-post-content h4 {
+    font-size: 18px; /* Ukuran untuk h4 */
+}
+
+.fl-module-fl-post-content h5 {
+    font-size: 16px; /* Ukuran untuk h5 */
+}
+
+.fl-module-fl-post-content h6 {
+    font-size: 14px; /* Ukuran untuk h6 */
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    html, body {
+      overflow-x: hidden;
+    }
+    .fl-col-small:not(.fl-col-small-full-width) {
+        max-width: 1000px;
+    }
+}
