@@ -84,6 +84,25 @@ get_header();
                         <?php the_content(); ?>
 
                         <?php
+                        $fasilitas = get_post_meta(get_the_ID(),'fasilitas',true);
+                        $itinerary = get_post_meta(get_the_ID(),'itinerary',true);
+                        if($fasilitas){
+                            echo '<hr>';
+                            echo '<div class="mb-2">';
+                                echo '<h5 class="fs-6 mb-3"><strong>Fasilitas</strong></h5>';
+                                echo $fasilitas;
+                            echo '</div>';
+                        } if($itinerary){
+                            echo '<hr>';
+                            echo '<div class="mb-2">';
+                                echo '<h5 class="fs-6 mb-3"><strong>Itinerary</strong></h5>';
+                                echo $itinerary;
+                            echo '</div>';
+                        }
+
+                        ?>
+
+                        <?php
                         wp_link_pages(
                             array(
                                 'before' => '<div class="page-links">' . __('Pages:', 'justg'),
