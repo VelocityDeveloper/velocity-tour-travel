@@ -38,9 +38,15 @@ get_header();
                         the_title('<h1 class="entry-title">', '</h1>');
                         ?>
 
-                        <div class="entry-meta mb-2">
+                        <div class="entry-meta mb-3 row align-items-center">
 
-                            Harga Mulai <span class="fs-6 fw-bold"><?php echo do_shortcode('[velocity-harga-paket]'); ?></span>
+                            <div class="col-7 pe-0">
+                                Harga Mulai <span class="fs-6 fw-bold"><?php echo do_shortcode('[velocity-harga-paket]'); ?></span>
+                            </div>
+                            
+                            <div class="col-5 ps-0 text-end">
+                                <?php echo velocity_tombol_pemesanan(); ?>
+                            </div>                            
 
                         </div><!-- .entry-meta -->
 
@@ -66,14 +72,16 @@ get_header();
                                     echo '</div>';
                                 }
                             echo '</div>';
-                            echo '<button class="carousel-control-prev" type="button" data-bs-target="#paket-'.get_the_ID().'" data-bs-slide="prev">';
-                                echo '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
-                                echo '<span class="visually-hidden">Previous</span>';
-                            echo '</button>';
-                            echo '<button class="carousel-control-next" type="button" data-bs-target="#paket-'.get_the_ID().'" data-bs-slide="next">';
-                                echo '<span class="carousel-control-next-icon" aria-hidden="true"></span>';
-                                echo '<span class="visually-hidden">Next</span>';
-                            echo '</button>';
+                            if($no > 1){
+                                echo '<button class="carousel-control-prev" type="button" data-bs-target="#paket-'.get_the_ID().'" data-bs-slide="prev">';
+                                    echo '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
+                                    echo '<span class="visually-hidden">Previous</span>';
+                                echo '</button>';
+                                echo '<button class="carousel-control-next" type="button" data-bs-target="#paket-'.get_the_ID().'" data-bs-slide="next">';
+                                    echo '<span class="carousel-control-next-icon" aria-hidden="true"></span>';
+                                    echo '<span class="visually-hidden">Next</span>';
+                                echo '</button>';
+                            }
                         echo '</div>';
                     }
                     echo velocity_info_paket();
@@ -81,7 +89,13 @@ get_header();
 
                     <div class="entry-content mt-2">
 
-                        <?php the_content(); ?>
+                        <?php 
+                        if (get_the_content()) {
+                            echo '<hr>';
+                            echo '<h5 class="fs-6 mb-3"><strong>Deskripsi</strong></h5>';
+                            the_content();
+                        }
+                        ?>
 
                         <?php
                         $fasilitas = get_post_meta(get_the_ID(),'fasilitas',true);

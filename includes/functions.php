@@ -96,7 +96,7 @@ function velocity_tour_travel_templates( $template ) {
 add_filter( 'template_include', 'velocity_tour_travel_templates', 99 );
 
 
-
+// menampilkan info paket
 function velocity_info_paket($post_id = null){
 	$post_id = $post_id ? $post_id : get_the_ID();
 	$durasi = get_post_meta( $post_id, 'durasi', true );
@@ -120,6 +120,17 @@ function velocity_info_paket($post_id = null){
 	echo '</div>';
 }
 
+
+// menghilangkan tulisan 'Archive' pada judul
+add_filter('get_the_archive_title', 'vtt_archive_title');
+function vtt_archive_title($title) {
+    if (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
+    }
+    return $title;
+}
 
 
 // [velocity-harga-paket]
@@ -169,3 +180,24 @@ function velocity_kategori_paket($atts) {
     return '';
 }
 add_shortcode('velocity-kategori-paket', 'velocity_kategori_paket');
+
+
+// 
+function velocity_tombol_pemesanan($post_id = null) {
+	global $post;
+    $pid = $post_id ? $post_id : $post->ID;	
+    $wa = get_option('no_pemesanan');
+    $text = 'Pesan Sekarang';
+	$html = '';    
+	// replace all except numbers
+    $whatsapp_number = $wa ? preg_replace('/[^0-9]/', '', $wa) : $wa;	
+    // replace 0 with 62 if first digit is 0
+    if (substr($whatsapp_number, 0, 1) == 0) {
+        $whatsapp_number    = substr_replace($whatsapp_number, '62', 0, 1);
+    }	
+	// if whatsapp_number exist
+    if($wa) {
+		$html .= '<a class="btn btn-primary btn-sm py-2 px-3 px-sm-4 text-white" href="https://wa.me/'.$whatsapp_number.'?text=Saya ingin memesan '.get_the_title($pid).'" target="_blank">'.$text.'</a>';
+    }
+    return $html;
+}
