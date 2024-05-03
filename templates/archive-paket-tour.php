@@ -23,7 +23,7 @@ get_header();
 			<!-- Do the left sidebar check -->
 			<?php do_action('justg_before_content'); ?>
 
-			<main class="site-main" id="main">
+			<main class="site-main col order-2" id="main">
 
 				<?php
 

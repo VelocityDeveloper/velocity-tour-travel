@@ -8,19 +8,19 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://velocitydeveloper.com
+ * @link              https://velocitydeveloper.com/
  * @since             1.0.0
  * @package           Velocity_Tour_Travel
  *
  * @wordpress-plugin
  * Plugin Name:       Velocity Tour & Travel
- * Plugin URI:        https://velocitydeveloper.com
+ * Plugin URI:        https://velocitydeveloper.com/
  * Description:       Plugin tour and travel by Velocity Developer
  * Version:           1.0.0
  * Author:            Velocity Developer
  * Author URI:        https://velocitydeveloper.com/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0+
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       velocity-tour-travel
  * Domain Path:       /languages
  */

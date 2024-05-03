@@ -21,7 +21,7 @@ get_header();
 			<!-- Do the left sidebar check -->
 			<?php do_action('justg_before_content'); ?>
 
-			<main class="site-main" id="main">
+			<main class="site-main col order-2" id="main">
 
 				<?php
 
@@ -67,8 +67,8 @@ get_header();
                                 foreach($img_gallery as $img){
                                     $no = ++$i;
                                     $class = $no == '1' ? ' active' : '';
-                                    echo '<div class="carousel-item'.$class .'">';
-                                        echo '<img src="'.$img.'" />';
+                                    echo '<div class="ratio ratio-16x9 carousel-item'.$class .'">';
+                                        echo '<img class="img-fluid" src="'.$img.'" />';
                                     echo '</div>';
                                 }
                             echo '</div>';
