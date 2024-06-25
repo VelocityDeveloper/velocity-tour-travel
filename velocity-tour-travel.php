@@ -53,6 +53,7 @@ $includes = [
 	'includes/meta-box.php', // load meta-box 
 	'includes/functions.php', // load functions
 	'includes/shortcodes/paket-slideshow.php',
+	'includes/shortcodes/paket-adventure-level.php',
 ];
 foreach ($includes as $include) {
 	require_once(VELOCITY_TOUR_TRAVEL_DIR.$include);

@@ -32,6 +32,17 @@ function velocity_tour_travel_metaboxes() {
 		),
 	) );
 	$cmb->add_field( array(
+		'name'       => __( 'Adventure Level', $text_domain ),
+		'desc'       => __( '', $text_domain ),
+		'id'         => 'adventure_level',
+		'type'       => 'text',
+		'attributes'	=> array(
+			'type' 		=> 'number',
+			'min'  		=> '1',
+			'max'  		=> '5',
+		),
+	) );
+	$cmb->add_field( array(
 		'name'       => __( 'Durasi', $text_domain ),
 		'desc'       => __( 'Contoh: 5 Hari', $text_domain ),
 		'id'         => 'durasi',
