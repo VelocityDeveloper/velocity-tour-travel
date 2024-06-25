@@ -6,23 +6,23 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 add_action('init', 'velocity_tour_travel_admin_init');
 function velocity_tour_travel_admin_init() {
     register_post_type('paket-tour', array(
-        'labels' => array(
-            'name' => 'Paket Tour',
-            'singular_name' => 'paket-tour',
-            'add_new' => 'Tambah Paket Tour',
-            'add_new_item' => 'Tambah Paket Tour',
-            'edit_item' => 'Edit Paket Tour',
-            'view_item' => 'Lihat Paket Tour',
-            'search_items' => 'Cari Paket Tour',
-            'not_found' => 'Tidak ditemukan',
-            'not_found_in_trash' => 'Tidak ada paket tour di kotak sampah'
+        'labels'        => array(
+            'name'                  => 'Paket Tour',
+            'singular_name'         => 'paket-tour',
+            'add_new'               => 'Tambah Paket Tour',
+            'add_new_item'          => 'Tambah Paket Tour',
+            'edit_item'             => 'Edit Paket Tour',
+            'view_item'             => 'Lihat Paket Tour',
+            'search_items'          => 'Cari Paket Tour',
+            'not_found'             => 'Tidak ditemukan',
+            'not_found_in_trash'    => 'Tidak ada paket tour di kotak sampah'
         ),
-        'menu_icon' => 'dashicons-screenoptions',
-        'public' => true,
-        'has_archive' => true,
+        'menu_icon'     => 'dashicons-screenoptions',
+        'public'        => true,
+        'has_archive'   => true,
 		//'show_in_rest' => true, // Use Gutenberg
-        'taxonomies' => array('kategori-paket'),
-        'supports' => array(
+        'taxonomies'    => array('kategori-paket'),
+        'supports'      => array(
             'title',
             'editor',
             'thumbnail',
@@ -32,10 +32,28 @@ function velocity_tour_travel_admin_init() {
 	'kategori-paket',
 	'paket-tour',
 	array(
-		'label' => __( 'Kategori Paket' ),
-		'hierarchical' => true,
+		'label'             => __( 'Kategori Paket' ),
+		'hierarchical'      => true,
 		'show_admin_column' => true,
-		//'show_in_rest' => true, // Use Gutenberg
+		'show_in_rest'      => true,
+	));
+	register_taxonomy(
+	'destinasi-paket',
+	'paket-tour',
+	array(
+		'label'             => __( 'Destinasi Paket' ),
+		'hierarchical'      => true,
+		'show_admin_column' => true,
+		'show_in_rest'      => true, 
+	));
+	register_taxonomy(
+	'durasi-paket',
+	'paket-tour',
+	array(
+		'label'             => __( 'Durasi Paket' ),
+		'hierarchical'      => true,
+		'show_admin_column' => true,
+		'show_in_rest'      => true,
 	));
 
 	// mengatur ulang permalink wordpress
