@@ -52,6 +52,7 @@ $includes = [
 	'includes/lib/cmb2/init.php', // load cmb2
 	'includes/meta-box.php', // load meta-box 
 	'includes/functions.php', // load functions
+	'includes/shortcodes/paket-slideshow.php',
 ];
 foreach ($includes as $include) {
 	require_once(VELOCITY_TOUR_TRAVEL_DIR.$include);
@@ -60,11 +61,23 @@ foreach ($includes as $include) {
 
 // Add custom scripts and styles
 function velocity_tour_scripts() {
-	$wptheme = wp_get_theme( 'velocity' );
+
+	// Get the version.
+	$the_version = VELOCITY_TOUR_TRAVEL_VERSION;
+	if (defined('WP_DEBUG') && true === WP_DEBUG) {
+		$the_version = $the_version.'.'.time();
+	}
+
+	$wptheme = wp_get_theme( 'velocity' );	
 	if (!$wptheme->exists()) {
 		wp_enqueue_style( 'vtt-bootstrap-style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
 		wp_enqueue_script( 'vtt-bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), null, true );
 	}
-	wp_enqueue_style( 'vtt-custom-style', VELOCITY_TOUR_TRAVEL_DIR_URI.'css/custom.css');
+
+	wp_enqueue_script('slick', VELOCITY_TOUR_TRAVEL_DIR_URI . 'assets/js/slick.min.js', array(), $the_version, true);
+
+	wp_enqueue_style('slick', VELOCITY_TOUR_TRAVEL_DIR_URI . 'assets/css/slick.min.css', array(), $the_version, false);
+	wp_enqueue_style('slick-theme', VELOCITY_TOUR_TRAVEL_DIR_URI . 'assets/css/slick-theme.min.css', array(), $the_version, false);
+	wp_enqueue_style( 'vtt-custom-style', VELOCITY_TOUR_TRAVEL_DIR_URI.'assets/css/custom.css', array(), $the_version, false);
 }
 add_action( 'wp_enqueue_scripts', 'velocity_tour_scripts' );
