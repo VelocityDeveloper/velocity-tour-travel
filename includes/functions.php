@@ -219,3 +219,20 @@ function velocity_tombol_pemesanan($post_id = null) {
     }
     return $html;
 }
+
+// [velocity-counter-taxonomy-paket]
+function velocity_counter_taxonomy_paket($atts) {    
+    ob_start();
+    $atribut = shortcode_atts(array(
+        'id'        => '',
+        'taxonomy'  => 'destinasi-paket',
+    ), $atts);
+    $id = $atribut['id'];
+    $taxonomy = $atribut['taxonomy'];
+
+    $term = get_term_by('id', $id, $taxonomy);
+    echo $term?$term->count:'0';
+    
+    return ob_get_clean();
+}
+add_shortcode('velocity-counter-taxonomy-paket', 'velocity_counter_taxonomy_paket');

@@ -4,7 +4,6 @@ add_shortcode('velocity-paket-form-cari', 'velocity_paket_formcari');
 function velocity_paket_formcari($atts){    
     ob_start();
     
-    global $post;
     $atribut = shortcode_atts(array(
         'layout' => 'column',
     ), $atts);

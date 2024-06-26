@@ -52,6 +52,7 @@ $includes = [
 	'includes/lib/cmb2/init.php', // load cmb2
 	'includes/meta-box.php', // load meta-box 
 	'includes/functions.php', // load functions
+	'includes/filter-query-paket.php',
 	'includes/shortcodes/paket-slideshow.php',
 	'includes/shortcodes/paket-adventure-level.php',
 	'includes/shortcodes/paket-form-cari.php',

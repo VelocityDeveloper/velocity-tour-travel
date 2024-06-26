@@ -21,7 +21,7 @@ function velocity_paket_slideshow($atts){
         $images = array_merge($images,$gallery);
     }
 
-    if($images):
+    if($images && count($images) > 1):
         ?>
         <div class="velocity-paket-slideshow <?php echo $nodeid; ?>">
 
@@ -80,6 +80,14 @@ function velocity_paket_slideshow($atts){
                         });
                     });
             </script>
+        </div>
+        <?php
+    elseif($images && count($images) == 1):
+        ?>
+         <div class="item-slideshow">
+            <div class="ratio ratio-4x3 bg-light">
+                <img src="<?php echo $images[0]; ?>" alt=""> 
+            </div>
         </div>
         <?php
     endif;
