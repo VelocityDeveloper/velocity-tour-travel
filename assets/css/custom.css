@@ -8,3 +8,14 @@
     font-size: 12px !important;
     padding: 3px 8px;
 }
+
+@media (min-width: 768px) {
+    .velocity-paket-form-cari .form-inline {
+        border-radius: .35rem !important;
+        overflow: hidden;
+    }
+    .velocity-paket-form-cari .form-inline .col-md-3 > .rounded,
+    .velocity-paket-form-cari .form-inline .btn {
+        border-radius: 0 !important;
+    }
+}

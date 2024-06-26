@@ -16,7 +16,7 @@
  * Plugin Name:       Velocity Tour & Travel
  * Plugin URI:        https://velocitydeveloper.com/
  * Description:       Plugin tour and travel by Velocity Developer
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Velocity Developer
  * Author URI:        https://velocitydeveloper.com/
  * License:           GPL-3.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'VELOCITY_TOUR_TRAVEL_VERSION', '1.0.0' );
+define( 'VELOCITY_TOUR_TRAVEL_VERSION', '1.1.0' );
 
 
 /**
@@ -54,6 +54,7 @@ $includes = [
 	'includes/functions.php', // load functions
 	'includes/shortcodes/paket-slideshow.php',
 	'includes/shortcodes/paket-adventure-level.php',
+	'includes/shortcodes/paket-form-cari.php',
 ];
 foreach ($includes as $include) {
 	require_once(VELOCITY_TOUR_TRAVEL_DIR.$include);
